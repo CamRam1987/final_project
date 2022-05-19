@@ -74,6 +74,6 @@ public class MainClassTest {
     }
     @Test
     public void clickLogin(){
-    Pages.homePage homepage=new homePage()
+    Pages.homePage homepage=new homePage(driver);
     }
 }
