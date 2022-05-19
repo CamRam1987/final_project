@@ -22,12 +22,12 @@ public class UITests extends SetProperties {
         driver.get(getUrl_host());
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
-    @AfterTest
-    public void AfterMethodMethod(){
-
-    }
     @AfterMethod
-    public void AfterTestMethod(){
+    public void AfterMethodMethod(){
         driver.quit();
+    }
+    @AfterTest
+    public void AfterTestMethod(){
+
     }
 }
