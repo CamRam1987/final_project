@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Base {
     private WebDriver driver;
@@ -14,6 +15,19 @@ public class Base {
 
     public void base (WebDriver driver){
         this.driver=driver;
+    }
+    public void setupdriver(String browserName){
+        if(browserName.equalsIgnoreCase("chrome")){
+            System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver_win32 (4)/chromedriver.exe");
+            driver=new ChromeDriver();
+        }else if (browserName.equalsIgnoreCase("firefox")){
+            System.setProperty("webdriver.gecko.driver","src/test/java/resources/geckodriver-v0.30.0-win64/geckodriver.exe");
+            driver = new FirefoxDriver();
+        }
+        else{
+            System.setProperty("webdriver.chrome.driver","src/test/java/resources/chromedriver_win32 (4)/chromedriver.exe");
+            driver=new ChromeDriver();
+        }
     }
 
     public WebDriver ChromeDriverConnection(){

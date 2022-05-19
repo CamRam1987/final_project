@@ -9,15 +9,6 @@ import org.testng.annotations.*;
 
 public class MainClassTest {
 
-    public static WebDriver driver;
-    @BeforeTest
-
-    @BeforeMethod
-
-    @AfterTest
-
-    @AfterMethod
-
     @Test (priority = 0)
     public void Token(){
         GetRequests getRequests = new GetRequests();
@@ -72,8 +63,5 @@ public class MainClassTest {
         DeleteRequests deleteRequests = new DeleteRequests();
         deleteRequests.deleteSession();
     }
-    @Test
-    public void clickLogin(){
-    Pages.homePage homepage=new homePage(driver);
-    }
+
 }
